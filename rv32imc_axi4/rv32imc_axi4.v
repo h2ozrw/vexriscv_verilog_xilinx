@@ -43,6 +43,7 @@
 
 module rv32imc_axi4 (
   input      [31:0]   externalResetVector,
+  input      [31:0]   mtvecBase,
   input               timerInterrupt,
   input               externalInterrupt,
   input               softwareInterrupt,
@@ -3811,7 +3812,7 @@ module rv32imc_axi4 (
   assign CsrPlugin_misa_base = 2'b01;
   assign CsrPlugin_misa_extensions = 26'h0000042;
   assign CsrPlugin_mtvec_mode = 2'b00;
-  assign CsrPlugin_mtvec_base = 30'h00000008;
+  assign CsrPlugin_mtvec_base = mtvecBase[31:2];
   assign _zz_157 = (CsrPlugin_mip_MTIP && CsrPlugin_mie_MTIE);
   assign _zz_158 = (CsrPlugin_mip_MSIP && CsrPlugin_mie_MSIE);
   assign _zz_159 = (CsrPlugin_mip_MEIP && CsrPlugin_mie_MEIE);
