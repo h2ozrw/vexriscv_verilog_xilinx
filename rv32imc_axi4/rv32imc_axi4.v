@@ -674,10 +674,10 @@ module rv32imc_axi4 (
   wire                writeBack_arbitration_isFlushed;
   wire                writeBack_arbitration_isMoving;
   wire                writeBack_arbitration_isFiring;
-  wire       [31:0]   lastStageInstruction /* verilator public */ ;
-  wire       [31:0]   lastStagePc /* verilator public */ ;
-  wire                lastStageIsValid /* verilator public */ ;
-  wire                lastStageIsFiring /* verilator public */ ;
+  wire       [31:0]   lastStageInstruction;
+  wire       [31:0]   lastStagePc;
+  wire                lastStageIsValid;
+  wire                lastStageIsFiring;
   reg                 IBusCachedPlugin_fetcherHalt;
   reg                 IBusCachedPlugin_incomingInstruction;
   wire                IBusCachedPlugin_predictionJumpInterface_valid;
@@ -716,7 +716,7 @@ module rv32imc_axi4 (
   wire       [31:0]   DBusCachedPlugin_redoBranch_payload;
   wire                BranchPlugin_jumpInterface_valid;
   wire       [31:0]   BranchPlugin_jumpInterface_payload;
-  wire                CsrPlugin_inWfi /* verilator public */ ;
+  wire                CsrPlugin_inWfi;
   wire                CsrPlugin_thirdPartyWake;
   reg                 CsrPlugin_jumpInterface_valid;
   reg        [31:0]   CsrPlugin_jumpInterface_payload;
@@ -740,7 +740,7 @@ module rv32imc_axi4 (
   wire                IBusCachedPlugin_fetchPc_output_valid;
   wire                IBusCachedPlugin_fetchPc_output_ready;
   wire       [31:0]   IBusCachedPlugin_fetchPc_output_payload;
-  reg        [31:0]   IBusCachedPlugin_fetchPc_pcReg /* verilator public */ ;
+  reg        [31:0]   IBusCachedPlugin_fetchPc_pcReg;
   reg                 IBusCachedPlugin_fetchPc_correction;
   reg                 IBusCachedPlugin_fetchPc_correctionReg;
   wire                IBusCachedPlugin_fetchPc_corrected;
@@ -752,7 +752,7 @@ module rv32imc_axi4 (
   reg        [31:0]   IBusCachedPlugin_fetchPc_redo_payload;
   reg                 IBusCachedPlugin_fetchPc_flushed;
   reg                 IBusCachedPlugin_decodePc_flushed;
-  reg        [31:0]   IBusCachedPlugin_decodePc_pcReg /* verilator public */ ;
+  reg        [31:0]   IBusCachedPlugin_decodePc_pcReg;
   wire       [31:0]   IBusCachedPlugin_decodePc_pcPlus;
   wire                IBusCachedPlugin_decodePc_injectedDecode;
   reg                 IBusCachedPlugin_iBusRsp_redoFetch;
@@ -909,9 +909,9 @@ module rv32imc_axi4 (
   wire       [4:0]    decode_RegFilePlugin_regFileReadAddress2;
   wire       [31:0]   decode_RegFilePlugin_rs1Data;
   wire       [31:0]   decode_RegFilePlugin_rs2Data;
-  wire                lastStageRegFileWrite_valid /* verilator public */ ;
-  wire       [4:0]    lastStageRegFileWrite_payload_address /* verilator public */ ;
-  wire       [31:0]   lastStageRegFileWrite_payload_data /* verilator public */ ;
+  wire                lastStageRegFileWrite_valid;
+  wire       [4:0]    lastStageRegFileWrite_payload_address;
+  wire       [31:0]   lastStageRegFileWrite_payload_data;
   reg        [31:0]   execute_IntAluPlugin_bitwise;
   reg        [31:0]   _zz_121;
   reg        [31:0]   _zz_122;
@@ -1005,7 +1005,7 @@ module rv32imc_axi4 (
   wire                _zz_158;
   wire                _zz_159;
   reg                 CsrPlugin_interrupt_valid;
-  reg        [3:0]    CsrPlugin_interrupt_code /* verilator public */ ;
+  reg        [3:0]    CsrPlugin_interrupt_code;
   reg        [1:0]    CsrPlugin_interrupt_targetPrivilege;
   wire                CsrPlugin_exception;
   wire                CsrPlugin_lastStageWasWfi;
@@ -1014,7 +1014,7 @@ module rv32imc_axi4 (
   reg                 CsrPlugin_pipelineLiberator_pcValids_2;
   wire                CsrPlugin_pipelineLiberator_active;
   reg                 CsrPlugin_pipelineLiberator_done;
-  wire                CsrPlugin_interruptJump /* verilator public */ ;
+  wire                CsrPlugin_interruptJump;
   reg                 CsrPlugin_hadException;
   wire       [1:0]    CsrPlugin_targetPrivilege;
   wire       [3:0]    CsrPlugin_trapCause;
@@ -1205,7 +1205,7 @@ module rv32imc_axi4 (
   reg [31:0] decode_to_execute_BRANCH_CTRL_string;
   `endif
 
-  reg [31:0] RegFilePlugin_regFile [0:31] /* verilator public */ ;
+  reg [31:0] RegFilePlugin_regFile [0:31];
 
   assign _zz_199 = (execute_arbitration_isValid && execute_IS_CSR);
   assign _zz_200 = (writeBack_arbitration_isValid && writeBack_REGFILE_WRITE_VALID);
