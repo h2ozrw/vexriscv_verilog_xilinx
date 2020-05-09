@@ -474,10 +474,10 @@ module rv32imc (
   wire                writeBack_arbitration_isFlushed;
   wire                writeBack_arbitration_isMoving;
   wire                writeBack_arbitration_isFiring;
-  wire       [31:0]   lastStageInstruction /* verilator public */ ;
-  wire       [31:0]   lastStagePc /* verilator public */ ;
-  wire                lastStageIsValid /* verilator public */ ;
-  wire                lastStageIsFiring /* verilator public */ ;
+  wire       [31:0]   lastStageInstruction;
+  wire       [31:0]   lastStagePc;
+  wire                lastStageIsValid;
+  wire                lastStageIsFiring;
   wire                IBusSimplePlugin_fetcherHalt;
   reg                 IBusSimplePlugin_incomingInstruction;
   wire                IBusSimplePlugin_predictionJumpInterface_valid;
@@ -497,7 +497,7 @@ module rv32imc (
   wire                IBusSimplePlugin_fetchPc_output_valid;
   wire                IBusSimplePlugin_fetchPc_output_ready;
   wire       [31:0]   IBusSimplePlugin_fetchPc_output_payload;
-  reg        [31:0]   IBusSimplePlugin_fetchPc_pcReg /* verilator public */ ;
+  reg        [31:0]   IBusSimplePlugin_fetchPc_pcReg;
   reg                 IBusSimplePlugin_fetchPc_correction;
   reg                 IBusSimplePlugin_fetchPc_correctionReg;
   wire                IBusSimplePlugin_fetchPc_corrected;
@@ -507,7 +507,7 @@ module rv32imc (
   reg        [31:0]   IBusSimplePlugin_fetchPc_pc;
   reg                 IBusSimplePlugin_fetchPc_flushed;
   reg                 IBusSimplePlugin_decodePc_flushed;
-  reg        [31:0]   IBusSimplePlugin_decodePc_pcReg /* verilator public */ ;
+  reg        [31:0]   IBusSimplePlugin_decodePc_pcReg;
   wire       [31:0]   IBusSimplePlugin_decodePc_pcPlus;
   wire                IBusSimplePlugin_decodePc_injectedDecode;
   wire                IBusSimplePlugin_iBusRsp_redoFetch;
@@ -668,9 +668,9 @@ module rv32imc (
   wire       [4:0]    decode_RegFilePlugin_regFileReadAddress2;
   wire       [31:0]   decode_RegFilePlugin_rs1Data;
   wire       [31:0]   decode_RegFilePlugin_rs2Data;
-  wire                lastStageRegFileWrite_valid /* verilator public */ ;
-  wire       [4:0]    lastStageRegFileWrite_payload_address /* verilator public */ ;
-  wire       [31:0]   lastStageRegFileWrite_payload_data /* verilator public */ ;
+  wire                lastStageRegFileWrite_valid;
+  wire       [4:0]    lastStageRegFileWrite_payload_address;
+  wire       [31:0]   lastStageRegFileWrite_payload_data;
   reg        [31:0]   execute_IntAluPlugin_bitwise;
   reg        [31:0]   _zz_104;
   reg        [31:0]   _zz_105;
@@ -858,7 +858,7 @@ module rv32imc (
   reg [31:0] decode_to_execute_BRANCH_CTRL_string;
   `endif
 
-  reg [31:0] RegFilePlugin_regFile [0:31] /* verilator public */ ;
+  reg [31:0] RegFilePlugin_regFile [0:31];
 
   assign _zz_142 = (writeBack_arbitration_isValid && writeBack_REGFILE_WRITE_VALID);
   assign _zz_143 = 1'b1;
