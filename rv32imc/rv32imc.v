@@ -362,7 +362,7 @@ module rv32imc (
   wire       [33:0]   memory_MUL_HL;
   wire       [33:0]   memory_MUL_LH;
   wire       [31:0]   memory_MUL_LL;
-  (* keep , syn_keep *) wire       [31:0]   execute_RS1 /* synthesis syn_keep = 1 */ ;
+  (* keep , syn_keep *) wire       [31:0]   execute_RS1;
   wire                decode_RS2_USE;
   wire                decode_RS1_USE;
   wire       [31:0]   _zz_21;
@@ -417,7 +417,7 @@ module rv32imc (
   wire                memory_MEMORY_STORE;
   wire                memory_MEMORY_ENABLE;
   wire       [31:0]   execute_SRC_ADD;
-  (* keep , syn_keep *) wire       [31:0]   execute_RS2 /* synthesis syn_keep = 1 */ ;
+  (* keep , syn_keep *) wire       [31:0]   execute_RS2;
   wire       [31:0]   execute_INSTRUCTION;
   wire                execute_MEMORY_STORE;
   wire                execute_MEMORY_ENABLE;
@@ -481,7 +481,7 @@ module rv32imc (
   wire                IBusSimplePlugin_fetcherHalt;
   reg                 IBusSimplePlugin_incomingInstruction;
   wire                IBusSimplePlugin_predictionJumpInterface_valid;
-  (* keep , syn_keep *) wire       [31:0]   IBusSimplePlugin_predictionJumpInterface_payload /* synthesis syn_keep = 1 */ ;
+  (* keep , syn_keep *) wire       [31:0]   IBusSimplePlugin_predictionJumpInterface_payload;
   wire                IBusSimplePlugin_decodePrediction_cmd_hadBranch;
   wire                IBusSimplePlugin_decodePrediction_rsp_wasWrong;
   wire                IBusSimplePlugin_pcValids_0;
