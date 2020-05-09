@@ -2980,7 +2980,7 @@ module rv32imc (
   assign writeBack_arbitration_isStuck = (writeBack_arbitration_haltItself || writeBack_arbitration_isStuckByOthers);
   assign writeBack_arbitration_isMoving = ((! writeBack_arbitration_isStuck) && (! writeBack_arbitration_removeIt));
   assign writeBack_arbitration_isFiring = ((writeBack_arbitration_isValid && (! writeBack_arbitration_isStuck)) && (! writeBack_arbitration_removeIt));
-  always @ (posedge clk or posedge reset) begin
+  always @ (posedge clk) begin
     if (reset) begin
       IBusSimplePlugin_fetchPc_pcReg <= externalResetVector;
       IBusSimplePlugin_fetchPc_correctionReg <= 1'b0;
