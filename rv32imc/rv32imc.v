@@ -1,6 +1,5 @@
-// Generator : SpinalHDL v1.4.1    git head : 492310e6fa66e9d8a47a48ea6dc406fde961dcf8
-// Component : VexRiscv
-// Git hash  : 492310e6fa66e9d8a47a48ea6dc406fde961dcf8
+// VexRiscV  492310e6fa66e9d8a47a48ea6dc406fde961dcf8
+// SpinalHDL 4e84e91b191e2e608958155e98f2ec7ba0fbed84
 
 
 `define BranchCtrlEnum_defaultEncoding_type [1:0]
