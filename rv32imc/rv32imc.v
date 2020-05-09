@@ -3347,3 +3347,37 @@ module rv32imc (
 
 
 endmodule
+
+`undef BranchCtrlEnum_defaultEncoding_type
+`undef BranchCtrlEnum_defaultEncoding_INC
+`undef BranchCtrlEnum_defaultEncoding_B
+`undef BranchCtrlEnum_defaultEncoding_JAL
+`undef BranchCtrlEnum_defaultEncoding_JALR
+
+`undef Src1CtrlEnum_defaultEncoding_type
+`undef Src1CtrlEnum_defaultEncoding_RS
+`undef Src1CtrlEnum_defaultEncoding_IMU
+`undef Src1CtrlEnum_defaultEncoding_PC_INCREMENT
+`undef Src1CtrlEnum_defaultEncoding_URS1
+
+`undef Src2CtrlEnum_defaultEncoding_type
+`undef Src2CtrlEnum_defaultEncoding_RS
+`undef Src2CtrlEnum_defaultEncoding_IMI
+`undef Src2CtrlEnum_defaultEncoding_IMS
+`undef Src2CtrlEnum_defaultEncoding_PC
+
+`undef AluBitwiseCtrlEnum_defaultEncoding_type
+`undef AluBitwiseCtrlEnum_defaultEncoding_XOR_1
+`undef AluBitwiseCtrlEnum_defaultEncoding_OR_1
+`undef AluBitwiseCtrlEnum_defaultEncoding_AND_1
+
+`undef ShiftCtrlEnum_defaultEncoding_type
+`undef ShiftCtrlEnum_defaultEncoding_DISABLE_1
+`undef ShiftCtrlEnum_defaultEncoding_SLL_1
+`undef ShiftCtrlEnum_defaultEncoding_SRL_1
+`undef ShiftCtrlEnum_defaultEncoding_SRA_1
+
+`undef AluCtrlEnum_defaultEncoding_type
+`undef AluCtrlEnum_defaultEncoding_ADD_SUB
+`undef AluCtrlEnum_defaultEncoding_SLT_SLTU
+`undef AluCtrlEnum_defaultEncoding_BITWISE
