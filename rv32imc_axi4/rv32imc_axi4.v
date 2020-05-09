@@ -568,7 +568,7 @@ module rv32imc_axi4 (
   wire       [33:0]   memory_MUL_HL;
   wire       [33:0]   memory_MUL_LH;
   wire       [31:0]   memory_MUL_LL;
-  (* keep , syn_keep *) wire       [31:0]   execute_RS1 /* synthesis syn_keep = 1 */ ;
+  (* keep , syn_keep *) wire       [31:0]   execute_RS1;
   wire       [31:0]   memory_SHIFT_RIGHT;
   reg        [31:0]   _zz_32;
   wire       `ShiftCtrlEnum_defaultEncoding_type memory_SHIFT_CTRL;
@@ -612,7 +612,7 @@ module rv32imc_axi4 (
   wire       [31:0]   memory_REGFILE_WRITE_DATA;
   wire                memory_MEMORY_ENABLE;
   wire                execute_MEMORY_MANAGMENT;
-  (* keep , syn_keep *) wire       [31:0]   execute_RS2 /* synthesis syn_keep = 1 */ ;
+  (* keep , syn_keep *) wire       [31:0]   execute_RS2;
   wire                execute_MEMORY_WR;
   wire       [31:0]   execute_SRC_ADD;
   wire                execute_MEMORY_ENABLE;
@@ -681,7 +681,7 @@ module rv32imc_axi4 (
   reg                 IBusCachedPlugin_fetcherHalt;
   reg                 IBusCachedPlugin_incomingInstruction;
   wire                IBusCachedPlugin_predictionJumpInterface_valid;
-  (* keep , syn_keep *) wire       [31:0]   IBusCachedPlugin_predictionJumpInterface_payload /* synthesis syn_keep = 1 */ ;
+  (* keep , syn_keep *) wire       [31:0]   IBusCachedPlugin_predictionJumpInterface_payload;
   wire                IBusCachedPlugin_decodePrediction_cmd_hadBranch;
   wire                IBusCachedPlugin_decodePrediction_rsp_wasWrong;
   wire                IBusCachedPlugin_pcValids_0;
@@ -5629,7 +5629,7 @@ module InstructionCache (
   reg                 _zz_4;
   reg                 lineLoader_fire;
   reg                 lineLoader_valid;
-  (* keep , syn_keep *) reg        [31:0]   lineLoader_address /* synthesis syn_keep = 1 */ ;
+  (* keep , syn_keep *) reg        [31:0]   lineLoader_address;
   reg                 lineLoader_hadError;
   reg                 lineLoader_flushPending;
   reg        [7:0]    lineLoader_flushCounter;
@@ -5641,7 +5641,7 @@ module InstructionCache (
   reg        [0:0]    lineLoader_wayToAllocate_value;
   wire                lineLoader_wayToAllocate_willOverflowIfInc;
   wire                lineLoader_wayToAllocate_willOverflow;
-  (* keep , syn_keep *) reg        [2:0]    lineLoader_wordIndex /* synthesis syn_keep = 1 */ ;
+  (* keep , syn_keep *) reg        [2:0]    lineLoader_wordIndex;
   wire                lineLoader_write_tag_0_valid;
   wire       [6:0]    lineLoader_write_tag_0_payload_address;
   wire                lineLoader_write_tag_0_payload_data_valid;
