@@ -4916,20 +4916,14 @@ module DataCache (
   reg                 loader_error;
   (* ram_style = "distributed" *)
   reg [21:0] ways_0_tags [0:127];
-  reg [7:0] ways_0_data_symbol0 [0:1023];
-  reg [7:0] ways_0_data_symbol1 [0:1023];
-  reg [7:0] ways_0_data_symbol2 [0:1023];
-  reg [7:0] ways_0_data_symbol3 [0:1023];
+  reg [31:0] ways_0_datas [0:1023];
   reg [7:0] _zz_35;
   reg [7:0] _zz_36;
   reg [7:0] _zz_37;
   reg [7:0] _zz_38;
   (* ram_style = "distributed" *)
   reg [21:0] ways_1_tags [0:127];
-  reg [7:0] ways_1_data_symbol0 [0:1023];
-  reg [7:0] ways_1_data_symbol1 [0:1023];
-  reg [7:0] ways_1_data_symbol2 [0:1023];
-  reg [7:0] ways_1_data_symbol3 [0:1023];
+  reg [31:0] ways_1_datas [0:1023];
   reg [7:0] _zz_39;
   reg [7:0] _zz_40;
   reg [7:0] _zz_41;
@@ -4967,25 +4961,25 @@ module DataCache (
   end
   always @ (posedge clk) begin
     if(_zz_7) begin
-      _zz_35 <= ways_0_data_symbol0[dataReadCmd_payload];
-      _zz_36 <= ways_0_data_symbol1[dataReadCmd_payload];
-      _zz_37 <= ways_0_data_symbol2[dataReadCmd_payload];
-      _zz_38 <= ways_0_data_symbol3[dataReadCmd_payload];
+      _zz_35 <= ways_0_datas[dataReadCmd_payload][8*0 +: 8];
+      _zz_36 <= ways_0_datas[dataReadCmd_payload][8*1 +: 8];
+      _zz_37 <= ways_0_datas[dataReadCmd_payload][8*2 +: 8];
+      _zz_38 <= ways_0_datas[dataReadCmd_payload][8*3 +: 8];
     end
   end
 
   always @ (posedge clk) begin
     if(dataWriteCmd_payload_mask[0] && _zz_3) begin
-      ways_0_data_symbol0[dataWriteCmd_payload_address] <= dataWriteCmd_payload_data[7 : 0];
+      ways_0_datas[dataWriteCmd_payload_address][8*0 +: 8] <= dataWriteCmd_payload_data[7 : 0];
     end
     if(dataWriteCmd_payload_mask[1] && _zz_3) begin
-      ways_0_data_symbol1[dataWriteCmd_payload_address] <= dataWriteCmd_payload_data[15 : 8];
+      ways_0_datas[dataWriteCmd_payload_address][8*1 +: 8] <= dataWriteCmd_payload_data[15 : 8];
     end
     if(dataWriteCmd_payload_mask[2] && _zz_3) begin
-      ways_0_data_symbol2[dataWriteCmd_payload_address] <= dataWriteCmd_payload_data[23 : 16];
+      ways_0_datas[dataWriteCmd_payload_address][8*2 +: 8] <= dataWriteCmd_payload_data[23 : 16];
     end
     if(dataWriteCmd_payload_mask[3] && _zz_3) begin
-      ways_0_data_symbol3[dataWriteCmd_payload_address] <= dataWriteCmd_payload_data[31 : 24];
+      ways_0_datas[dataWriteCmd_payload_address][8*3 +: 8] <= dataWriteCmd_payload_data[31 : 24];
     end
   end
 
@@ -5006,25 +5000,25 @@ module DataCache (
   end
   always @ (posedge clk) begin
     if(_zz_10) begin
-      _zz_39 <= ways_1_data_symbol0[dataReadCmd_payload];
-      _zz_40 <= ways_1_data_symbol1[dataReadCmd_payload];
-      _zz_41 <= ways_1_data_symbol2[dataReadCmd_payload];
-      _zz_42 <= ways_1_data_symbol3[dataReadCmd_payload];
+      _zz_39 <= ways_1_datas[dataReadCmd_payload][8*0 +: 8];
+      _zz_40 <= ways_1_datas[dataReadCmd_payload][8*1 +: 8];
+      _zz_41 <= ways_1_datas[dataReadCmd_payload][8*2 +: 8];
+      _zz_42 <= ways_1_datas[dataReadCmd_payload][8*3 +: 8];
     end
   end
 
   always @ (posedge clk) begin
     if(dataWriteCmd_payload_mask[0] && _zz_1) begin
-      ways_1_data_symbol0[dataWriteCmd_payload_address] <= dataWriteCmd_payload_data[7 : 0];
+      ways_1_datas[dataWriteCmd_payload_address][8*0 +: 8] <= dataWriteCmd_payload_data[7 : 0];
     end
     if(dataWriteCmd_payload_mask[1] && _zz_1) begin
-      ways_1_data_symbol1[dataWriteCmd_payload_address] <= dataWriteCmd_payload_data[15 : 8];
+      ways_1_datas[dataWriteCmd_payload_address][8*1 +: 8] <= dataWriteCmd_payload_data[15 : 8];
     end
     if(dataWriteCmd_payload_mask[2] && _zz_1) begin
-      ways_1_data_symbol2[dataWriteCmd_payload_address] <= dataWriteCmd_payload_data[23 : 16];
+      ways_1_datas[dataWriteCmd_payload_address][8*2 +: 8] <= dataWriteCmd_payload_data[23 : 16];
     end
     if(dataWriteCmd_payload_mask[3] && _zz_1) begin
-      ways_1_data_symbol3[dataWriteCmd_payload_address] <= dataWriteCmd_payload_data[31 : 24];
+      ways_1_datas[dataWriteCmd_payload_address][8*3 +: 8] <= dataWriteCmd_payload_data[31 : 24];
     end
   end
 
