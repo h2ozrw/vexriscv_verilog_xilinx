@@ -4146,7 +4146,7 @@ module rv32imc_axi4 (
   assign dBusAxi_w_payload_last = streamFork_1_io_outputs_1_thrown_payload_last;
   assign dBusAxi_r_ready = 1'b1;
   assign dBusAxi_b_ready = 1'b1;
-  always @ (posedge clk or posedge reset) begin
+  always @ (posedge clk) begin
     if (reset) begin
       IBusCachedPlugin_fetchPc_pcReg <= externalResetVector;
       IBusCachedPlugin_fetchPc_correctionReg <= 1'b0;
@@ -4722,7 +4722,7 @@ module StreamFork (
   assign io_outputs_1_payload_mask = io_input_payload_mask;
   assign io_outputs_1_payload_length = io_input_payload_length;
   assign io_outputs_1_payload_last = io_input_payload_last;
-  always @ (posedge clk or posedge reset) begin
+  always @ (posedge clk) begin
     if (reset) begin
       _zz_1 <= 1'b1;
       _zz_2 <= 1'b1;
@@ -5513,7 +5513,7 @@ module DataCache (
     `endif
   end
 
-  always @ (posedge clk or posedge reset) begin
+  always @ (posedge clk) begin
     if (reset) begin
       stageB_flusher_valid <= 1'b1;
       stageB_mmuRsp_physicalAddress <= 32'h0;
@@ -5895,7 +5895,7 @@ module InstructionCache (
   assign io_cpu_decode_mmuRefilling = decodeStage_mmuRsp_refilling;
   assign io_cpu_decode_mmuException = ((! decodeStage_mmuRsp_refilling) && (decodeStage_mmuRsp_exception || (! decodeStage_mmuRsp_allowExecute)));
   assign io_cpu_decode_physicalAddress = decodeStage_mmuRsp_physicalAddress;
-  always @ (posedge clk or posedge reset) begin
+  always @ (posedge clk) begin
     if (reset) begin
       lineLoader_valid <= 1'b0;
       lineLoader_hadError <= 1'b0;
