@@ -858,7 +858,15 @@ module rv32imc (
   reg [31:0] decode_to_execute_BRANCH_CTRL_string;
   `endif
 
+  (* ram_style = "distributed" *)
   reg [31:0] RegFilePlugin_regFile [0:31];
+
+  integer idx_reg;
+  initial begin
+      for(idx_reg = 0; idx_reg < 32; idx_reg = idx_reg + 1) begin
+          RegFilePlugin_regFile[idx_reg] = 0;
+      end
+  end
 
   assign _zz_142 = (writeBack_arbitration_isValid && writeBack_REGFILE_WRITE_VALID);
   assign _zz_143 = 1'b1;
