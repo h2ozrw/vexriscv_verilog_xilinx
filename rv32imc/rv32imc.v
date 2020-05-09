@@ -38,7 +38,7 @@
 `define AluCtrlEnum_defaultEncoding_BITWISE 2'b10
 
 
-module VexRiscv (
+module rv32imc (
   input      [31:0]   externalResetVector,
   output              iBus_cmd_valid,
   input               iBus_cmd_ready,
