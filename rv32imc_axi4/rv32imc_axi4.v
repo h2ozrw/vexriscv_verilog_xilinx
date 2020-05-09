@@ -4914,6 +4914,7 @@ module DataCache (
   wire                loader_counter_willOverflow;
   reg        [1:0]    loader_waysAllocator;
   reg                 loader_error;
+  (* ram_style = "distributed" *)
   reg [21:0] ways_0_tags [0:127];
   reg [7:0] ways_0_data_symbol0 [0:1023];
   reg [7:0] ways_0_data_symbol1 [0:1023];
@@ -4923,6 +4924,7 @@ module DataCache (
   reg [7:0] _zz_36;
   reg [7:0] _zz_37;
   reg [7:0] _zz_38;
+  (* ram_style = "distributed" *)
   reg [21:0] ways_1_tags [0:127];
   reg [7:0] ways_1_data_symbol0 [0:1023];
   reg [7:0] ways_1_data_symbol1 [0:1023];
@@ -5704,8 +5706,10 @@ module InstructionCache (
   reg                 decodeStage_mmuRsp_refilling;
   reg                 decodeStage_hit_valid;
   reg                 decodeStage_hit_error;
+  (* ram_style = "distributed" *)
   reg [21:0] ways_0_tags [0:127];
   reg [31:0] ways_0_datas [0:1023];
+  (* ram_style = "distributed" *)
   reg [21:0] ways_1_tags [0:127];
   reg [31:0] ways_1_datas [0:1023];
 
